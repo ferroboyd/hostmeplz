@@ -36,7 +36,7 @@ function gotResizeMessage(event)
 {
 	console.log( "got resize message: " + JSON.stringify(event.data))
 	console.log("event.data.height: " + event.data.height);
-	//if(event.data.height ){
+	if(event.data.height != undefined ){
 	
 		var matches = document.querySelectorAll('iframe'); // iterate through all iFrames on page
 		for (i=0; i<matches.length; i++)
@@ -52,7 +52,7 @@ function gotResizeMessage(event)
 				return 1;
 			}
 		}
-	//}
+	}
 }
 	    
 document.addEventListener("DOMContentLoaded", function(){
