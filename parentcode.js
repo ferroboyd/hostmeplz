@@ -35,20 +35,24 @@ SOFTWARE.
 function gotResizeMessage(event)
 {
 	console.log( "got resize message: " + JSON.stringify(event.data))
+	console.log("event.data.height: " + event.data.height);
+	//if(event.data.height ){
 	
-	var matches = document.querySelectorAll('iframe'); // iterate through all iFrames on page
-	for (i=0; i<matches.length; i++)
-	{
-		if( matches[i].contentWindow == event.source ) // found the iFrame that sent us a message
+		var matches = document.querySelectorAll('iframe'); // iterate through all iFrames on page
+		for (i=0; i<matches.length; i++)
 		{
-			console.log("found iframe that sent a message: " + matches[i].src)
-				
-			//matches[i].width = Number( event.data.width )	 <-- we do not do anything with the page width for now
-			matches[i].height = Number( event.data.height )
-			
-			return 1;
+			if( matches[i].contentWindow == event.source ) // found the iFrame that sent us a message
+			{
+				console.log("found iframe that sent a message: " + matches[i].src)
+
+				//matches[i].width = Number( event.data.width )	 <-- we do not do anything with the page width for now
+
+				matches[i].height = Number( event.data.height )
+
+				return 1;
+			}
 		}
-	}
+	//}
 }
 	    
 document.addEventListener("DOMContentLoaded", function(){
