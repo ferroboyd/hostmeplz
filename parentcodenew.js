@@ -10,7 +10,7 @@ function include(file) {
 }
   
 /* Include Many js files */
-include('iframeResizer.min.js');
+include('https://ferroboyd.github.io/hostmeplz/iframeResizer.min.js');
 
 iFrameResize({
   log                     : true,                  // Enable console logging
