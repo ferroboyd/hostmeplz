@@ -1,17 +1,3 @@
-function include(file) {
-  
-  var script  = document.createElement('script');
-  script.src  = file;
-  script.type = 'text/javascript';
-  script.defer = true;
-  
-  document.getElementsByTagName('head').item(0).appendChild(script);
-  
-}
-  
-/* Include Many js files */
-include('https://ferroboyd.github.io/hostmeplz/iframeResizer.min.js');
-
 iFrameResize({
   log                     : true,                  // Enable console logging
   enablePublicMethods     : true,                  // Enable methods within iframe hosted page
